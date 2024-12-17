@@ -1,37 +1,67 @@
-!(function (e, o) {
-  "object" == typeof exports && "object" == typeof module
-    ? (module.exports = o())
-    : "function" == typeof define && define.amd
-    ? define([], o)
-    : "object" == typeof exports
-    ? (exports.a = o())
-    : (e.a = o());
-})(this, () =>
-  (() => {
-    "use strict";
-    var e = {
-        519: (e, o) => {
-          Object.defineProperty(o, "__esModule", { value: !0 }),
-            (o.hello = void 0),
-            (o.hello = "Hello from SDK");
-        },
-      },
-      o = {};
-    function t(r) {
-      var l = o[r];
-      if (void 0 !== l) return l.exports;
-      var n = (o[r] = { exports: {} });
-      return e[r](n, n.exports, t), n.exports;
-    }
-    var r = {};
-    return (
-      (() => {
-        var e = r;
-        Object.defineProperty(e, "__esModule", { value: !0 });
-        const o = t(519);
-        console.log(o.hello);
-      })(),
-      r
-    );
-  })()
-);
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/index.ts":
+/*!**********************!*\
+  !*** ./src/index.ts ***!
+  \**********************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\n// import { hello } from '../../package-sdk/src/index';\nvar index_1 = __webpack_require__(/*! @package-sdk/index */ \"../package-sdk/src/index.ts\");\nconsole.log(index_1.hello);\n\n\n//# sourceURL=webpack://package-a/./src/index.ts?");
+
+/***/ }),
+
+/***/ "../package-sdk/src/index.ts":
+/*!***********************************!*\
+  !*** ../package-sdk/src/index.ts ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.hello = void 0;\nexports.hello = \"Hello from package-sdk\";\n\n\n//# sourceURL=webpack://package-a/../package-sdk/src/index.ts?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.ts");
+/******/ 	
+/******/ })()
+;

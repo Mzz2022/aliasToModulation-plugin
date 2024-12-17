@@ -1,20 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "commonjs",
+    "baseUrl": ".",
+    "composite": true,
+    "paths": {
+      "@sdk/*": ["./src/*"]
+    },
     "outDir": "./dist",
-    "strict": true,
-    "lib": ["es6", "dom"],
-    "sourceMap": true,
-    "allowJs": false,
-    "checkJs": false,
-    "removeComments": true,
-    "noEmit": false,
-    "noEmitOnError": true,
-    "alwaysStrict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true
+    "declaration": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src"],
+  "references": []
 }

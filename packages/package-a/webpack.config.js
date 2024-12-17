@@ -1,4 +1,7 @@
 const path = require("path");
+const TypescriptAliasPlugin = require("../../typescript-alias-plugin");
+const WebpackBundleAnalyzer =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 module.exports = {
   entry: "./src/index.ts",
   // entry属性指定了入口文件的路径，这里是src/index.ts。
@@ -11,6 +14,9 @@ module.exports = {
   // __dirname是Node.js中的一个全局变量，表示当前执行脚本所在的目录。
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
+    alias: {
+      // "@package-sdk": path.resolve(__dirname, "../package-sdk/src"),
+    },
   },
   // resolve属性配置了模块解析规则。extensions指定了哪些文件扩展名可以被自动解析。
   module: {
@@ -22,9 +28,16 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new TypescriptAliasPlugin({
+      tsconfigRoot: path.resolve(__dirname),
+    }),
+    new WebpackBundleAnalyzer(),
+  ],
   // module属性配置了模块的处理规则。
   // 这里使用了ts-loader来处理.ts和.tsx文件，
-  mode: "production",
+  // mode: "production",
+  mode: "development",
   // production模式会启用性能优化，
   // 而development模式则提供了详细的错误信息和源映射（source maps）。
 };

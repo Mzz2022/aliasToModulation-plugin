@@ -1,0 +1,16 @@
+{
+  "compilerOptions": { 
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "dist",
+    "baseUrl": "./",
+    // alias
+    "paths": {
+      "@/*": ["src/*"]
+    },
+  },
+  "references": [
+    { "path": "./packages/package-a" },
+    { "path": "./packages/package-sdk" }
+  ]
+}
